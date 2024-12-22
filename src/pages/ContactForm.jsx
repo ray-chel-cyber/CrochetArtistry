@@ -1,75 +1,75 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        contact: '',
-        date: '',
-    });
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', date: '' });
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        setFormData({ name: '', email: '', contact: '', date: '' });
+        // Here you would typically handle form submission (e.g., send data to an API)
+
+        // Redirect to the catalog page after successful submission
+        navigate('/catalogue');
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg mt-14">
-            <h2 className="text-2xl font-bold mb-6 text-center text-white bg-amber-300 p-4 rounded-t-lg">Contact Details</h2>
-            <label className="mb-4">
-                <span className="block text-gray-700 mb-1">Name:</span>
+        <form onSubmit={handleSubmit} className="p-8 bg-white shadow-lg rounded-lg max-w-md mx-auto">
+            <h2 className="text-3xl font-bold text-center text-amber-900 mb-6">Contact Us</h2>
+            <div className="mb-4">
+                <label className="block mb-2 text-gray-700" htmlFor="name">Name</label>
                 <input
                     type="text"
+                    id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
                     required
-                    className="w-full p-3 border border-amber-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400"
                 />
-            </label>
-            <label className="mb-4">
-                <span className="block text-gray-700 mb-1">Email:</span>
+            </div>
+            <div className="mb-4">
+                <label className="block mb-2 text-gray-700" htmlFor="email">Email</label>
                 <input
                     type="email"
+                    id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
                     required
-                    className="w-full p-3 border border-amber-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400"
                 />
-            </label>
-            <label className="mb-4">
-                <span className="block text-gray-700 mb-1">Contact:</span>
+            </div>
+            <div className="mb-4">
+                <label className="block mb-2 text-gray-700" htmlFor="phone">Phone Number</label>
                 <input
-                    type="text"
-                    name="contact"
-                    value={formData.contact}
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
                     required
-                    className="w-full p-3 border border-amber-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400"
                 />
-            </label>
-            <label className="mb-4">
-                <span className="block text-gray-700 mb-1">Date:</span>
+            </div>
+            <div className="mb-4">
+                <label className="block mb-2 text-gray-700" htmlFor="date">Preferred Date</label>
                 <input
                     type="date"
+                    id="date"
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
                     required
-                    className="w-full p-3 border border-amber-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-400"
                 />
-            </label>
-            <button type="submit" className="mt-4 px-6 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-500 transition duration-200">
+            </div>
+            <button type="submit" className="w-full px-4 py-2 bg-amber-700 text-white rounded-lg hover:bg-amber-600 transition duration-300">
                 Submit
             </button>
         </form>

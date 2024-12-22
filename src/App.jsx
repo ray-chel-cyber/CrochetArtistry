@@ -4,6 +4,8 @@ import LandingPage from './pages/landingpage'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ContactForm from './pages/ContactForm'
+import CategoryCard from './pages/CategoryCard'
+import Catalogue from './pages/Catalogue'
 
 function App() {
   const router = createBrowserRouter([
@@ -18,8 +20,16 @@ function App() {
     },
 
     
+    {
+      path: "CategoryCard",
+      element: <CategoryCard/>
+    },
 
     
+    {
+      path: "Catalogue",
+      element: <Catalogue/>
+    },
 
   ])
 
