@@ -1,30 +1,3 @@
-// import React from "react";
-// import CategoryCard from "./CategoryCard";
-
-// const categories = [
-//   { name: "Dresses", image: "https://via.placeholder.com/300x200", link: "/dresses" },
-//   { name: "Swimwear", image: "https://via.placeholder.com/300x200", link: "/swimwear" },
-//   { name: "Pants", image: "https://via.placeholder.com/300x200", link: "/pants" },
-//   { name: "Accessories", image: "https://via.placeholder.com/300x200", link: "/accessories" },
-//   { name: "Custom Designs", image: "https://via.placeholder.com/300x200", link: "/custom-designs" },
-// ];
-
-// const Catalogue = () => {
-//   return (
-//     <div className="bg-gray-100 py-8">
-//       <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">Crochet Catalogue</h1>
-//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4">
-//         {categories.map((category) => (
-//           <CategoryCard key={category.name} {...category} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Catalogue;
-
-
 import React from 'react';
 import CategoryCard from './CategoryCard';
 
